@@ -1,0 +1,39 @@
+import java.util.*;
+class Main
+{
+	public static void main(String[] args) 
+	{
+	    int A[]={6,1, 15, 19, 9, 13, 12, 6, 7, 2, 10, 4, 1, 14, 11, 14, 14, 13};
+	    int n=A.length;
+	    int count=0;
+	    for(int i=0;i<n;i++)
+	    {
+	        if(n==1) //length of the array
+	        {
+	            count++;
+	        }
+	        else if(i==0)
+	        {
+	            if(A[i+1]<A[i])  // checking for A[0] peak element (for 1st element)
+	            {
+	                count++;
+	            }
+	        }
+	        else if(i== (n-1))     //checking for A[n-1] peak element (for last element)
+	        {
+	            if(A[i-1]<A[i])
+	            {
+	                count++;
+	            }
+	        }
+	        else
+	        {
+	            if(A[i+1]<A[i] && A[i-1]<A[i])   // for checking each and every element
+	            {
+	                count++;
+	            }
+	        }
+	    }
+	    System.out.print(count);
+	}
+}
