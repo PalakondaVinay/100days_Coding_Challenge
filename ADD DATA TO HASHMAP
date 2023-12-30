@@ -1,0 +1,24 @@
+import java.util.*;
+class Main
+{
+	public static void main(String[] args) {
+		HashMap<Integer, Integer> H=new HashMap<>();
+        int A[]={3,4,3,3,4,1};
+        for(int i:A)
+        {
+            if(H.containsKey(i))
+            {
+                H.put(i, H.get(i)+1);
+            }
+            else
+            {
+                H.put(i,1);
+            }
+        }
+		for(Map.Entry<Integer, Integer> entry : H.entrySet())
+		{
+		    System.out.println(entry.getKey() + " " + entry.getValue());
+		}
+		
+	}
+}
